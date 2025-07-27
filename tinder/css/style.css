@@ -47,7 +47,7 @@ section {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding-left: 1rem;
 
     & img {
@@ -148,7 +148,7 @@ footer {
             transform: translateX(0) !important;
         }
 
-        &.choice {
+        .choice {
             border-radius: 8px;
             color: black;
             border: 4px solid;
@@ -162,18 +162,20 @@ footer {
             font-weight: bold;
             text-shadow: 0 0 10px rgba(0, 0, 0 .3);
             width: fit-content;
+        }
 
-        &.nope {
+        .choice.nope {
             border-color: #ff6e63;
             color: #ff6e63;
             transform: rotate(30deg);
         }
 
-        &.like {
+        .choice.like {
             border-color: #63ff68;
             color: #63ff68;
             left: 16px;
             transform: rotate(-30deg);
+            right: auto;
             }
         }
 
@@ -202,4 +204,3 @@ footer {
             font-weight: 400;
         }
     }
-}

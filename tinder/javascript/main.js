@@ -28,7 +28,7 @@ function startDrag(event) {
 
         const deg = pullDeltaX / 13
 
-        actualCard.style.transform = `translateX(${pullDeltaX}px rotate(${deg}deg)`
+        actualCard.style.transform = `translateX(${pullDeltaX}px) rotate(${deg}deg)`
         actualCard.style.cursor = 'grabbing'
 
         const opacity = Math.abs(pullDeltaX) / 100
