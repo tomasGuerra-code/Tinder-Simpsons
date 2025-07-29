@@ -80,3 +80,151 @@ function startDrag(event) {
 
 document.addEventListener('mousedown', startDrag)
 document.addEventListener('touchstart', startDrag, {passive: true})
+
+
+const characters = [
+  {
+    name: "Homero",
+    age: 39,
+    img: "./assets/cards/Homero.webp",
+    alt: "Homero Simpson, 39 años",
+  },
+  {
+    name: "Marge",
+    age: 38,
+    img: "./assets/cards/Marge.webp",
+    alt: "Margie Bouvier, 38 años",
+  },
+  {
+    name: "Ned",
+    age: 60,
+    img: "./assets/cards/Flanders.webp",
+    alt: "Ned Flanders, 60 años",
+  },
+    {
+    name: "Paty",
+    age: 45,
+    img: "./assets/cards/Paty.webp",
+    alt: "Paty Bouvier, 45 años",
+  },
+    {
+    name: "Selma",
+    age: 45,
+    img: "./assets/cards/Selma.webp",
+    alt: "Selma Bouvier, 45 años",
+  },
+    {
+    name: "Abraham",
+    age: 87,
+    img: "./assets/cards/Abuelo.webp",
+    alt: "Abraham Simpson, 87 años",
+  },
+    {
+    name: "Jaqueline",
+    age: 76,
+    img: "./assets/cards/MamaMarge.webp",
+    alt: "Jaqueline Bouvier, 76 años",
+  },
+    {
+    name: "Montgomery",
+    age: 104,
+    img: "./assets/cards/Burns.webp",
+    alt: "Charles Montgomery Burns, 104 años",
+  },
+    {
+    name: "Smithers",
+    age: 44,
+    img: "./assets/cards/Smithers.webp",
+    alt: "Waylon Smithers, 44 años",
+  },
+    {
+    name: "Lenny",
+    age: 35,
+    img: "./assets/cards/Lenny.webp",
+    alt: "Lenny Leonard, 35 años",
+  },
+    {
+    name: "Carl",
+    age: 35,
+    img: "./assets/cards/Carl.webp",
+    alt: "Carl Carson, 35 años",
+  },
+    {
+    name: "Moe",
+    age: 35,
+    img: "./assets/cards/Moe.webp",
+    alt: "Moe Szyslak, 35 años",
+  },
+    {
+    name: "Barney",
+    age: 33,
+    img: "./assets/cards/Barney.webp",
+    alt: "Barney Gumble, 33 años",
+  },
+    {
+    name: "Apu",
+    age: 33,
+    img: "./assets/cards/Apu.webp",
+    alt: "Apu Nahasapeemapetilon, 33 años",
+  },
+    {
+    name: "Hershel",
+    age: 54,
+    img: "./assets/cards/Krusty.webp",
+    alt: "Krusty el Payaso, 54 años",
+  },
+    {
+    name: "Gorgory",
+    age: 40,
+    img: "./assets/cards/Gorgory.webp",
+    alt: "Gregory Wiggum, 40 años",
+  },
+    {
+    name: "Julius",
+    age: 56,
+    img: "./assets/cards/Hibbert.webp",
+    alt: "Julius Hibbert, 56 años",
+  },
+    {
+    name: "Otto",
+    age: 31,
+    img: "./assets/cards/Otto.webp",
+    alt: "Otto Mann, 31 años",
+  },
+    {
+    name: "Saymour",
+    age: 44,
+    img: "./assets/cards/Skinner.webp",
+    alt: "Seymour Skinner, 44 años",
+  },
+      {
+    name: "Edna",
+    age: 30,
+    img: "./assets/cards/Edna.webp",
+    alt: "Edna Krabappel, 30 años",
+  },
+    {
+    name: "Elisabeth",
+    age: 30,
+    img: "./assets/cards/Hoover.webp",
+    alt: "Elisabeth Hoover, 30 años",
+  },
+];
+
+function renderCards() {
+  const cardsContainer = document.querySelector('.cards');
+  cardsContainer.innerHTML = characters.map(char =>`
+    <article>
+      <img src="${char.img}" alt="${char.alt}">
+      <h2>${char.name}<span>${char.age}</span></h2>
+      <div class="choice nope">NOPE</div>
+      <div class="choice like">LIKE</div>
+    </article>
+  `).join('') + `
+    <span>
+      No hay más personas en Springfield... <br>
+      Vuelve a intentarlo más tarde.
+      </span>
+    `;
+}
+document.addEventListener('DOMContentLoaded', renderCards);
