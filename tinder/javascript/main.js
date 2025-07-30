@@ -81,6 +81,7 @@ function startDrag(event) {
 document.addEventListener('mousedown', startDrag)
 document.addEventListener('touchstart', startDrag, {passive: true})
 
+//Personajes de Springfield
 
 const characters = [
   {
@@ -102,13 +103,13 @@ const characters = [
     alt: "Ned Flanders, 60 años",
   },
     {
-    name: "Paty",
+    name: "Patty", //mmm
     age: 45,
-    img: "./assets/cards/Paty.webp",
+    img: "./assets/cards/Patty.webp",
     alt: "Paty Bouvier, 45 años",
   },
     {
-    name: "Selma",
+    name: "Selma", //mmmm
     age: 45,
     img: "./assets/cards/Selma.webp",
     alt: "Selma Bouvier, 45 años",
@@ -126,7 +127,7 @@ const characters = [
     alt: "Jaqueline Bouvier, 76 años",
   },
     {
-    name: "Montgomery",
+    name: "Montgomery", //revisar foto
     age: 104,
     img: "./assets/cards/Burns.webp",
     alt: "Charles Montgomery Burns, 104 años",
@@ -150,19 +151,19 @@ const characters = [
     alt: "Carl Carson, 35 años",
   },
     {
-    name: "Moe",
+    name: "Moe", //revisar foto
     age: 35,
     img: "./assets/cards/Moe.webp",
     alt: "Moe Szyslak, 35 años",
   },
     {
-    name: "Barney",
+    name: "Barney", //baja calidad
     age: 33,
     img: "./assets/cards/Barney.webp",
     alt: "Barney Gumble, 33 años",
   },
     {
-    name: "Apu",
+    name: "Apu", //cambiar foto
     age: 33,
     img: "./assets/cards/Apu.webp",
     alt: "Apu Nahasapeemapetilon, 33 años",
