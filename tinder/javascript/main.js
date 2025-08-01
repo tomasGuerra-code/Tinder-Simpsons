@@ -81,6 +81,57 @@ function startDrag(event) {
 document.addEventListener('mousedown', startDrag)
 document.addEventListener('touchstart', startDrag, {passive: true})
 
+//Botones del footer
+const btnUndo = document.querySelector('.is-undo')
+const btnRemove = document.querySelector('.is-remove')
+const btnStar = document.querySelector('.is-star')
+const btnFav = document.querySelector('.is-fav')
+const btnZap = document.querySelector('.is-zap')
+
+let lastRemovedCard = null // Guarda la ultima card
+
+//Swipe a la izquierda, va muy rapido creo y no muestra el nope
+
+btnRemove.addEventListener('click', () => {
+  const topCard = document.querySelector('.cards article:last-of-type')
+  if (topCard) {
+    lastRemovedCard = topCard.cloneNode(true)
+    topCard.classList.add('go-left')
+    topCard.addEventListener('transitionend', () => topCard.remove())
+    }
+  })
+
+//Swipe a la derecha, va muy rapido creo y no muestra el like
+
+btnFav.addEventListener('click', () => {
+  const topCard = document.querySelector('.cards article:last-of-type')
+  if (topCard) {
+    lastRemovedCard = topCard.cloneNode(true)
+    topCard.classList.add('go-right')
+    topCard.addEventListener('transitionend', () => topCard.remove())
+    }
+  })
+
+  //Deshacer el ultimo swipe
+btnUndo.addEventListener('click', () => {
+  if (lastRemovedCard) {
+    lastRemovedCard.classList.remove('go-left', 'go-right')
+    lastRemovedCard.style.transform = ''
+    document.querySelector('.cards').appendChild(lastRemovedCard)
+    lastRemovedCard = null
+  }
+})
+
+//Agregar alguna funcionalidad a los botones de estrella y rayo
+
+btnStar.addEventListener('click', () => {
+  alert('¡Funcionalidad pendiente para el botón de estrella!');
+})
+
+btnZap.addEventListener('click', () => {
+  alert('¡Funcionalidad pendiente para el botón de rayo!');
+})
+
 //Personajes de Springfield
 
 const characters = [
@@ -103,13 +154,13 @@ const characters = [
     alt: "Ned Flanders, 60 años",
   },
     {
-    name: "Patty", //mmm
+    name: "Patty",
     age: 45,
     img: "./assets/cards/Patty.webp",
     alt: "Paty Bouvier, 45 años",
   },
     {
-    name: "Selma", //mmmm
+    name: "Selma",
     age: 45,
     img: "./assets/cards/Selma.webp",
     alt: "Selma Bouvier, 45 años",
@@ -127,7 +178,7 @@ const characters = [
     alt: "Jaqueline Bouvier, 76 años",
   },
     {
-    name: "Montgomery", //revisar foto
+    name: "Montgomery",
     age: 104,
     img: "./assets/cards/Burns.webp",
     alt: "Charles Montgomery Burns, 104 años",
